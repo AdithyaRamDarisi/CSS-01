@@ -1,0 +1,389 @@
+/* CSS Box Model */
+/* The CSS Box Model explains how every HTML element is displayed as a rectangular box on a webpage. 
+It consists of Content, Padding, Border, and Margin. */
+
+/* Content:::::::::
+Content is the actual text, image, or other information inside an HTML element.
+
+width specifies the content's width.
+height specifies the content's height. */
+
+.content-box {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+}
+
+/* Padding:::::::
+Padding is the space between the content and the border. 
+It creates internal spacing inside an element. */
+
+.content-box{
+     padding: 20px;
+     padding-top: 10px;
+     padding-right: 15px;
+     padding-bottom: 20px;
+    padding-left: 25px;
+}
+
+/* Border:::::::::::::
+A border is the line surrounding the content and padding. */
+
+.border-box {
+    padding: 10px;
+    border: 3px double red;
+}
+
+/* Border styles include: :::::::::*/
+
+/* solid — continuous line.
+dashed — dashed line.
+dotted — dotted line.
+double — double line. */
+
+
+/* Margin::::::
+Margin is the space outside an element's border. It separates an element from neighboring elements. */
+
+.margin-one {
+    background-color: lightblue;
+    margin-bottom: 20px;
+}
+
+.margin-two {
+    background-color: lightpink;
+}
+
+/* margin: 20px;
+margin-top: 10px;
+margin-right: 15px;
+margin-bottom: 20px;
+margin-left: 25px; */
+
+/* Width and Height:::::::::
+
+The width and height properties control an element's dimensions. */
+
+.size-box {
+    width: 250px;
+    height: 120px;
+    background-color: orange;
+}
+
+/* box-sizing:::::::::::
+
+The box-sizing property determines how the browser calculates an element's width and height.
+
+It has two commonly used values:
+
+content-box
+border-box */
+
+/* content-box vs. border-box
+
+These values determine whether padding and borders are included in the specified width and height.
+
+A. content-box
+
+This is the default CSS behavior.
+
+The specified width applies only to the content. */
+
+.border-box{
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: content-box;
+}
+
+/* border-box:
+
+The specified width includes the content, padding, and border. */
+
+.content-box{
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+
+/* Margin Collapse:
+
+Margin collapse occurs when the vertical margins of certain block elements combine into a 
+single margin instead of adding together. */
+
+
+.collapse-one {
+    margin-bottom: 30px;
+    background-color: lightblue;
+}
+
+.collapse-two {
+    margin-top: 20px;
+    background-color: lightgreen;
+}
+
+
+
+/* Overflow
+
+The overflow property controls what happens when content exceeds an element's specified dimensions.
+
+The four common values are: */
+
+/* A. visible
+
+Content can extend outside the element's box. This is the default. */
+
+.overflow-visible {
+    width: 150px;
+    height: 50px;
+    overflow: visible;
+}
+/* B. hidden
+
+Extra content is clipped and no scrollbar is provided. */
+
+.overflow-hidden {
+    width: 150px;
+    height: 50px;
+    overflow: hidden;
+}
+/* C. scroll
+
+Scrollbars are provided so users can access overflowing content, even when scrolling is not necessary in some browsers. */
+
+.overflow-scroll {
+    width: 150px;
+    height: 50px;
+    overflow: scroll;
+}
+/* D. auto
+
+The browser provides scrolling when the content overflows. */
+
+.overflow-auto {
+    width: 150px;
+    height: 50px;
+    overflow: auto;
+}
+
+/* Outline and Its Difference from Borders:::::
+
+An outline is a line drawn around an element, outside its border. 
+It is often used to show which input or button currently has keyboard focus. */
+
+.outline-button {
+    border: 2px solid blue;
+    outline: 3px solid red;
+    outline-offset: 4px;
+}
+
+
+/* CSS Display Properties:
+
+The CSS display property controls how an HTML element appears on a webpage, 
+including how it occupies space and interacts with other elements. */
+
+/* display: block
+
+A block element starts on a new line and occupies the available width by default. */
+
+.block-one {
+    display: block;
+    background-color: lightblue;
+}
+
+.block-two {
+    display: block;
+    background-color: lightgreen;
+}
+
+/* display: inline
+
+An inline element stays on the same line as surrounding content and occupies only the space 
+it needs. */
+
+.inline-one {
+    display: inline;
+    background-color: lightblue;
+}
+
+.inline-two {
+    display: inline;
+    background-color: lightgreen;
+}
+
+/* display: inline-block
+
+An inline-block element stays on the same line as other inline content while allowing you 
+to set its width and height. */
+
+.inline-block-one {
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    background-color: lightblue;
+}
+
+.inline-block-two {
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    background-color: lightcoral;
+}
+
+/* display: none
+
+The display: none property completely hides an element and removes it from the document layout. */
+
+
+.hidden-text {
+    display: none;
+}
+
+
+/* visibility: hidden
+
+The visibility: hidden property hides an element but preserves its space in the document layout. */
+
+.visible-box {
+    width: 120px;
+    height: 50px;
+    background-color: lightblue;
+    margin-bottom: 5px;
+}
+
+.invisible-box {
+    width: 120px;
+    height: 50px;
+    background-color: lightcoral;
+    visibility: hidden;
+    margin-bottom: 5px;
+}
+
+
+/* CSS Positioning:
+
+The CSS position property controls how an element is placed on a webpage. 
+The main values are static, relative, absolute, fixed, and sticky. */
+
+.static-box {
+    position: static;
+    top: 50px;
+    background-color: lightblue;
+}
+
+
+/* position: relative:
+
+Definition: relative positions an element relative to its normal position while preserving 
+its original space in the document. */
+
+.relative-box {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    background-color: lightgreen;
+}
+
+
+/* position: absolute
+absolute removes an element from the normal document flow and positions it relative to its nearest 
+ancestor that establishes a positioning reference, usually one with a position other than static. */
+
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: lightblue;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: orange;
+}
+
+/* position: fixed
+
+Definition: fixed removes an element from the normal document flow and positions 
+it relative to the viewport in typical cases. It usually stays in the same place when the page scrolls. */
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: blue;
+    color: white;
+    padding: 12px;
+}
+
+/* position: sticky
+
+Definition: sticky behaves like a relatively positioned element until it reaches a specified 
+scrolling threshold, after which it sticks within its scrolling container. */
+
+.sticky-heading {
+    position: sticky;
+    top: 0;
+    background-color: lightyellow;
+    padding: 10px;
+}
+
+
+/* z-index:
+
+Definition: The z-index property controls the stacking order of elements when they overlap.
+ Within the same stacking context, an element with a higher stack level generally appears 
+ in front of one with a lower level. */
+
+ .z-box {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+}
+
+.z-first {
+    top: 30px;
+    left: 30px;
+    background-color: lightblue;
+    z-index: 1;
+}
+
+.z-second {
+    top: 70px;
+    left: 80px;
+    background-color: lightcoral;
+    z-index: 2;
+}
+
+/* float:
+
+Definition: The float property moves an element to the left or right of its container, 
+allowing surrounding inline content to flow around it. */
+
+.float-image {
+    float: left;
+    margin-right: 15px;
+}
+
+/* clear:
+
+Definition: The clear property prevents an element from sitting alongside floats on the 
+specified side. */
+
+.float-box {
+    float: left;
+    width: 120px;
+    height: 80px;
+    background-color: lightblue;
+}
+
+.clear-text {
+    clear: left;
+    background-color: lightyellow;
+}
+

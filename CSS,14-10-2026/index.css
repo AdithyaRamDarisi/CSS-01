@@ -1,0 +1,279 @@
+/* FlexBox */ 
+
+/* Flexbox is a CSS layout system used to arrange elements in rows or columns and control 
+their alignment, spacing, and sizes. */
+
+/* Flex Container and Flex Items
+
+Flex Container: The parent element with display: flex.
+Flex Items: The child elements inside the flex container. */
+
+.container {
+    display: flex;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+.container div {
+    background-color: orange;
+    padding: 20px;
+    margin: 5px;
+}
+
+/* 
+flex-direction ::::::::
+
+Controls the direction of flex items. */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* justify-content:
+
+Aligns items along the main axis. */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* flex-start – Start.
+flex-end – End.
+center – Center.
+space-between – Space between items.
+space-around – Space around items.
+space-evenly – Equal spacing everywhere. */
+
+
+/* align-items
+
+Aligns items along the cross axis. */
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+/* align-content::
+Controls spacing between multiple rows or columns when items wrap. */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 300px;
+}
+
+/* Common values: center, flex-start, flex-end, space-between, space-around, and stretch. */
+
+/* flex-wrap:
+
+Controls whether items stay on one line or move to another. */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* gap::
+
+Sets the space between flex items. */
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* order::
+
+Changes the visual order of individual flex items. */
+
+.item2 {
+    order: 2;
+}
+
+.item1 {
+    order: 1;
+}
+
+/* flex-grow:
+
+Controls how much an item grows to fill available space. */
+
+.item1 {
+    flex-grow: 1;
+}
+
+.item2 {
+    flex-grow: 2;
+}
+
+
+/* flex-shrink
+
+Controls how much an item shrinks when space is insufficient. */
+
+.item1 {
+    flex-shrink: 1;
+}
+
+.item2 {
+    flex-shrink: 0;
+}
+
+/*flex-basis
+
+Sets an item's initial main-axis size before growing or shrinking. */
+
+.item1 {
+    flex-basis: 200px;
+}
+
+
+/* CSS Grid – Beginner Guide
+
+CSS Grid is a CSS layout system used to arrange elements in rows and columns.
+ It is useful for creating galleries, dashboards, card layouts, and webpages. */
+
+/* 
+ Grid Container and Grid Items
+Grid Container: The parent element with display: grid.
+Grid Items: The child elements inside the grid container. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.container1 div {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* grid-template-columns
+
+Defines the number and width of columns. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+/* grid-template-rows:
+
+Defines the height of grid rows. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 150px;
+}
+
+
+/* grid-column:
+
+Controls which columns an item occupies. */
+
+.item10 {
+    grid-column: 1 / 3;
+}
+
+
+/* grid-row:
+
+Controls which rows an item occupies. */
+
+.item10 {
+    grid-row: 1 / 3;
+}
+
+
+/* gap
+
+Adds space between rows and columns. */
+
+.container1 {
+    display: grid;
+    gap: 20px;
+}
+
+/* repeat()
+
+Repeats column or row definitions. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* fr Unit::
+
+fr means a fraction of the available space in the grid container. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* minmax()
+
+Sets a minimum and maximum size for a row or column. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+}
+/* 
+Grid Alignment::
+
+Controls the position and spacing of grid items. */
+
+.container1 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* Grid Areas:
+
+grid-template-areas lets you create a layout using named areas. */
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+    gap: 10px;
+}
+
+header { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+
+
+/* Responsive Layouts in CSS */
+
+/* Responsive design means creating websites that automatically adjust to different screen sizes, 
+such as mobiles, tablets, laptops, and desktops. */
+
+/* Responsive Design Fundamentals */
+
+/* A responsive website adjusts its layout, images, text, and containers according to the screen size. */
+
+
+/* Media Queries
+
+Media queries apply CSS styles based on screen size or other device conditions. */
+
+

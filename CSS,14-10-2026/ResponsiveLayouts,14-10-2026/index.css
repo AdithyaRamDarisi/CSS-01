@@ -1,0 +1,136 @@
+/* Responsive Layouts in CSS 
+
+Responsive design means creating websites that automatically adjust to different screen sizes, 
+such as mobiles, tablets, laptops, and desktops.
+
+
+1. Responsive Design Fundamentals
+
+A responsive website adjusts its layout, images, text, and containers according to the screen size. */
+
+
+/* Mobile: One card per row.
+Tablet: Two cards per row.
+Desktop: Three cards per row. */
+
+.box {
+            background-color: lightblue;
+            padding: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                background-color: lightcoral;
+            }
+        }
+
+
+/* Mobile-First Design::::::::
+
+Mobile-first design means writing the basic CSS for mobile devices first and then adding 
+styles for larger screens. */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background-color: lightblue;
+    padding: 30px;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile-First Design:
+
+Mobile-first design means writing the basic CSS for mobile devices first and then adding 
+styles for larger screens. */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background-color: lightblue;
+    padding: 30px;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .container1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .container1 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Responsive Navigation::
+
+Responsive navigation adapts a website's navigation menu to different screen sizes.
+
+For example, a desktop may display links horizontally, while a mobile device displays them 
+vertically. */
+
+
+ nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #222;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+
+/* Responsive Cards and Containers:::
+
+Responsive cards and containers automatically adjust their sizes and arrangement to fit the 
+available space. */
+
+.container3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: lightblue;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }

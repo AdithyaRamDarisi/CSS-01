@@ -1,0 +1,138 @@
+/* Website Layout Planning:
+
+Definition: Website layout planning is the process of organizing website sections 
+before starting development. */
+header, section, footer {
+    padding: 25px;
+    margin: 10px;
+    background: lightblue;
+    text-align: center;
+}
+
+footer {
+    background: navy;
+    color: white;
+}
+
+/* Semantic HTML + CSS:
+
+Definition: Semantic HTML uses meaningful tags to describe content, while CSS controls 
+its appearance. */
+
+.blog {
+    padding: 20px;
+    background: #f0f0f0;
+    border-left: 5px solid blue;
+}
+
+/* Component-Based UI Thinking:
+
+Definition: Dividing a website into reusable components such as cards and buttons. */
+
+
+.card {
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    background: lightblue;
+    border-radius: 10px;
+}
+
+/* Responsive Navigation:
+
+Definition: Creating a navigation menu that adapts to different screen sizes. */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: navy;
+    color: white;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 500px) {
+    .navbar, .links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Hero Sections::
+
+Definition: A hero section introduces the website with a main heading, description, 
+and call-to-action. */
+
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: #172554;
+    color: white;
+}
+
+.hero button {
+    padding: 12px 24px;
+    background: royalblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Cards and Feature Sections:
+
+Definition: Cards display related information in separate containers, while feature 
+sections highlight important benefits. */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    padding: 30px 15px;
+    background: lightblue;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card:hover {
+    background: skyblue;
+}
+
+
+/* Forms:
+
+Definition: Forms collect information from users through input fields and submission controls. */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: royalblue;
+    color: white;
+    border: none;
+}
+

@@ -1,0 +1,240 @@
+
+/* CSS Variables */
+:root {
+    --primary-color: #635bff;
+    --primary-hover: #4b43db;
+    --text-color: #22223b;
+    --muted-color: #77778b;
+    --card-background: #ffffff;
+    --page-background: #f3f4fa;
+    --border-radius: 18px;
+    --card-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+}
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 15px;
+    font-family: Arial, sans-serif;
+    background: var(--page-background);
+    color: var(--text-color);
+}
+
+.page-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Product Card */
+.product-card {
+    width: 100%;
+    max-width: 340px;
+    overflow: hidden;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed),
+                box-shadow var(--transition-speed);
+}
+
+/* Card Hover Effect */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    background: #e9eaff;
+}
+
+/* Pseudo-element */
+.product-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.15),
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+/* Image Styling */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+/* Sale Badge */
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    padding: 7px 12px;
+    color: white;
+    background: #ff4757;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Product Details */
+.product-details {
+    padding: 22px;
+}
+
+/* Category */
+.product-category {
+    margin-bottom: 9px;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Product Name */
+.product-name {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+/* Description */
+.product-description {
+    margin-bottom: 17px;
+    color: var(--muted-color);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Rating */
+.product-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.rating-stars {
+    color: #ffb400;
+    letter-spacing: 1px;
+}
+
+.rating-value {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.review-count {
+    color: var(--muted-color);
+    font-size: 12px;
+}
+
+/* Pricing */
+.product-pricing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.current-price {
+    color: var(--primary-color);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.original-price {
+    color: #999999;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+/* Add to Cart Button */
+.cart-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-speed),
+                transform var(--transition-speed);
+}
+
+/* Button Hover */
+.cart-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Button Active */
+.cart-button:active {
+    transform: scale(0.97);
+}
+
+/* Button Icon */
+.cart-icon {
+    font-size: 22px;
+    transition: transform var(--transition-speed);
+}
+
+.cart-button:hover .cart-icon {
+    transform: translateX(5px);
+}
+
+/* Pseudo-element */
+.product-name::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-top: 8px;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 25px;
+    }
+
+    .product-details {
+        padding: 18px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+}

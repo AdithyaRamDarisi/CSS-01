@@ -1,0 +1,300 @@
+/* CSS Animations
+
+CSS animations allow you to change an element's styles gradually without using JavaScript. */
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: changeColor 3s infinite;
+}
+
+@keyframes changeColor {
+  from {
+    background-color: blue;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+
+/* @keyframes:
+
+The @keyframes rule defines the stages of a CSS animation. */
+
+.moving-box {
+    width: 80px;
+    height: 80px;
+    background: green;
+    animation: move 3s infinite alternate;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+/* Animation Properties:
+
+Definition: Animation properties control an animation's name, duration, delay, repetition,
+direction, and speed. */
+
+
+.property-box {
+    width: 100px;
+    height: 100px;
+    background: purple;
+    animation-name: resize;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes resize {
+    to {
+        width: 200px;
+    }
+}
+
+/* Animation Duration:
+
+Definition: animation-duration specifies how long one animation cycle takes. */
+
+.duration-box {
+    width: 80px;
+    height: 80px;
+    background: orange;
+    animation: durationMove 4s infinite alternate;
+}
+
+@keyframes durationMove {
+    to {
+        transform: translateX(200px);
+    }
+}
+
+
+/* Animation Delay
+
+Definition: animation-delay specifies how long an animation waits before starting. */
+
+.delay-box {
+    width: 80px;
+    height: 80px;
+    background: teal;
+    animation: delayMove 2s 3s forwards;
+}
+
+@keyframes delayMove {
+    to {
+        transform: translateX(200px);
+    }
+}
+
+/* Animation Iteration:
+
+Definition: animation-iteration-count specifies how many times an animation repeats. */
+
+.iteration-box {
+    width: 80px;
+    height: 80px;
+    background: crimson;
+    animation: bounce 1s 3 alternate;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(50px);
+    }
+}
+
+/* Animation Timing Functions:
+
+Definition: animation-timing-function controls the speed pattern of an animation. */
+
+.timing-box {
+    width: 80px;
+    height: 80px;
+    background: blue;
+    animation: smoothMove 3s ease-in-out infinite alternate;
+}
+
+@keyframes smoothMove {
+    to {
+        transform: translateX(200px);
+    }
+}
+
+/* Transformations:
+
+Definition: CSS transformations change an element's position, size, rotation, or angle. */
+
+.transform-box {
+    width: 120px;
+    padding: 20px;
+    background: lightgreen;
+    transition: transform 0.5s;
+}
+
+.transform-box:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Responsive Navigation:
+
+Definition: Responsive navigation adjusts menu layouts to fit different screen sizes. */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Responsive Cards::
+
+Definition: Responsive cards automatically adjust their layout according to the 
+available screen width. */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: lightblue;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Tables:
+
+Definition: Responsive tables allow users to view tabular data on different screen sizes. */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 300px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid gray;
+}
+
+/* Responsive Images:
+
+Responsive images resize to fit their containers while maintaining their aspect ratio. */
+
+.responsive-image {
+    max-width: 28%;
+    max-height:20%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile-First Design::
+
+Definition: Mobile-first design creates layouts for smaller screens first and 
+enhances them for larger screens. */
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background: lightblue;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+
+
+/* Advanced Flexbox:
+
+Definition: Advanced Flexbox controls item alignment, spacing, sizing, and wrapping in 
+flexible layouts. */
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.flex-container div {
+    flex: 1 1 120px;
+    padding: 25px;
+    background: lightgreen;
+    text-align: center;
+}
+
+/* Advanced CSS Grid:
+
+Definition: Advanced CSS Grid creates flexible two-dimensional layouts using rows and columns. */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.grid-container div {
+    padding: 30px;
+    background: lightcoral;
+    text-align: center;
+}
+
+
+
+

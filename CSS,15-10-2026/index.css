@@ -1,0 +1,397 @@
+/* Advanced Selectors in CSS::
+
+Advanced selectors help you select HTML elements based on their specificity, 
+relationships, states, positions, and attributes. */
+
+/* CSS Specificity:::
+
+Definition: Specificity determines which CSS rule is applied when multiple rules target 
+the same element. */
+
+/* Inline styles ::::::: Highest Priority*/
+/*ID selectors (#id)
+Class selectors (.class), attribute selectors, and pseudo-classes
+Element selectors and pseudo-elements */
+
+
+h2 {
+    color: blue;
+}
+
+.specText {
+    color: green;
+}
+
+#specTitle {
+    color: red;
+}
+
+/* Inheritance::
+
+Definition: Inheritance allows certain CSS properties to pass from parent elements to their 
+child elements. */
+
+.inheritParent {
+    color: purple;
+    font-family: Arial;
+}
+
+
+
+/* Pseudo-classes
+
+Definition: Pseudo-classes select HTML elements based on their state or position. */
+
+.pseudoButton:hover {
+    background-color: lightblue;
+}
+
+.pseudoButton:active {
+    background-color: orange;
+}
+
+.pseudoInput:focus {
+    border: 2px solid blue;
+    outline: none;
+}
+
+.pseudoList li:first-child {
+    color: red;
+}
+
+.pseudoList li:last-child {
+    color: green;
+}
+
+.pseudoList li:nth-child(2) {
+    color: blue;
+}
+
+
+/* :hover changes the button color when the mouse moves over it.
+:active changes the button color while it is being activated.
+:focus adds a blue border to the input.
+:first-child makes HTML red.
+:last-child makes JavaScript green.
+:nth-child(2) makes CSS blue. */
+
+/* Pseudo-elements:
+
+Definition: Pseudo-elements style specific parts of an HTML element or insert generated content. */
+
+.elementTitle::before {
+    content: "★ ";
+    color: orange;
+}
+
+.elementTitle::after {
+    content: " ★";
+    color: orange;
+}
+
+.elementText::first-letter {
+    color: red;
+    font-size: 30px;
+}
+
+.elementText::first-line {
+    font-weight: bold;
+}
+
+/* ::before inserts a star before the heading.
+::after inserts a star after the heading.
+::first-letter styles the first letter in red and makes it larger.
+::first-line makes the first line bold. */
+
+
+/* Attribute Selectors::
+
+Definition: Attribute selectors select HTML elements based on their attributes or attribute values. */
+
+input[type="text"] {
+    background-color: lightyellow;
+}
+
+input[type="email"] {
+    background-color: lightpink;
+}
+
+a[target="_blank"] {
+    color: red;
+}
+
+[class^="btn"] {
+    background-color: blue;
+    color: white;
+}
+
+
+
+/* Custom Properties Using --variable-name::
+
+Definition: CSS custom properties are variables used to store reusable CSS values. 
+Their names begin with -- and are usually declared inside a selector. */
+
+
+:root {
+  --head-color : blue;
+  --text-color: green;
+}
+
+.customTitle {
+    color: var(--heading-color);
+}
+
+.customDescription {
+    color: var(--text-color);
+}
+
+
+/* Using var():
+
+Definition: The var() function retrieves the value stored in a CSS custom property and applies
+ it to a CSS property. */
+
+ :root {
+    --button-background: purple;
+    --button-text: white;
+}
+
+.variableButton {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+}
+
+/* 
+Reusable Colors, Spacing, and Typography::
+
+Definition: CSS variables can store colors, spacing values, and font styles so you can reuse 
+and update them throughout a webpage. */
+
+:root {
+    --card-color: navy;
+    --card-spacing: 20px;
+    --main-font: Arial, sans-serif;
+}
+
+.reusableCard {
+    color: var(--card-color);
+    padding: var(--card-spacing);
+    font-family: var(--main-font);
+    border: 1px solid gray;
+}
+
+.reusableButton {
+    padding: var(--card-spacing);
+    font-family: var(--main-font);
+    background-color: var(--card-color);
+    color: white;
+    border: none;
+}
+
+/* Gradients:
+
+Definition: Gradients create a smooth transition between two or more colors using CSS functions 
+such as linear-gradient() and radial-gradient(). */
+
+
+.gradientBox {
+    background: linear-gradient(to right, blue, purple);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Shadows::
+
+Definition: Shadows add depth to elements by creating a shadow around a box or behind text. 
+CSS provides box-shadow and text-shadow. */
+
+.shadowCard {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 4px 4px 10px gray;
+}
+
+.shadowTitle {
+    text-shadow: 2px 2px 3px lightgray;
+}
+
+
+/* Opacity::
+
+Definition: The opacity property controls the transparency of an element, 
+ranging from 0 (fully transparent) to 1 (fully opaque). */
+
+.opacityBox {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    opacity: 0.5;
+}
+
+/* !important and Specificity Conflicts
+
+Definition: !important gives a CSS declaration priority over normal declarations in the same
+ cascade context, even when those declarations have higher specificity. */
+
+ #importantMessage {
+    color: blue;
+}
+
+.importantText {
+    color: red !important;
+}
+
+
+
+/* CSS Transitions::
+
+Definition: CSS transitions make changes in CSS property values happen smoothly over a 
+specified duration. */
+
+.transitionBox {
+    width: 150px;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    transition: background-color 1s;
+}
+
+.transitionBox:hover {
+    background-color: red;
+}
+
+
+/* Transform::
+
+Definition: The CSS transform property changes an element's position, size, rotation, 
+or shape without changing the normal document flow. */
+
+.transformBox {
+    width: 120px;
+    padding: 20px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    transform: rotate(10deg);
+}
+
+/* translate()::
+
+Definition: The translate() function moves an element horizontally, vertically, or in both 
+directions. */
+
+.translateBox {
+    width: 120px;
+    padding: 20px;
+    background-color: green;
+    color: white;
+    transform: translate(50px, 20px);
+}
+
+/* scale()
+
+Definition: The scale() function increases or decreases an element's size. */
+
+.scaleBox {
+    width: 120px;
+    padding: 20px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    transform: scale(1.2);
+}
+
+/* rotate()::
+
+Definition: The rotate() function rotates an element clockwise or counterclockwise by a specified angle. */
+
+.rotateBox {
+    width: 120px;
+    padding: 20px;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    transform: rotate(115deg);
+}
+
+
+/* @keyframes::
+
+Definition: The @keyframes rule defines the stages of a CSS animation by specifying the styles 
+an element should have at different points in time. */
+
+.keyframeBox {
+    width: 120px;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    animation: colorChange 1s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+/* Animation Duration, Delay, and Iteration
+
+Definition: These properties control how long an animation runs, when it starts, 
+and how many times it repeats. */
+
+.timingBox {
+    width: 120px;
+    padding: 20px;
+    background-color: teal;
+    color: white;
+    animation-name: moveBox;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 3;
+}
+
+@keyframes moveBox {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100px);
+    }
+}
+
+
+/* Hover Effects::
+
+Definition: Hover effects change an element's appearance when the mouse pointer moves over it, 
+commonly using the :hover pseudo-class with transitions or transforms. */
+
+.hoverButton {
+    padding: 12px 24px;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hoverButton:hover {
+    background-color: royalblue;
+    transform: scale(1.1);
+}
+
+

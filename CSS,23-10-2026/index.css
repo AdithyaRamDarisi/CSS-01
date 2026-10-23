@@ -1,0 +1,522 @@
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.primary-btn {
+    background-color: royalblue;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: white;
+    color: royalblue;
+    border: 2px solid royalblue;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.disabled-btn {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* Responsive Images:
+
+Definition: Responsive images automatically adjust their size to fit different screen sizes 
+without overflowing their containers. */
+
+.image-container {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+img {
+    width: 160%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Flexbox and Grid Combination:
+
+Definition: Flexbox arranges elements along one dimension, while CSS Grid organizes elements 
+into rows and columns. Combining them creates flexible, responsive layouts. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    padding: 40px 10px;
+    background: #e8edff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* display: flex:             Arranges navbar items in a flexible row.
+justify-content:                 Controls horizontal distribution in a row.
+align-items:                      Aligns items along the cross-axis.
+display:grid:                     Creates a grid layout.
+grid-template-columns:            Defines the number and size of columns.
+gap:                              Adds space between items. */
+
+/* Media Queries:
+
+Definition: Media queries apply CSS rules according to screen size or other device 
+characteristics. */
+
+.responsive-box {
+    padding: 40px;
+    background: royalblue;
+    color: white;
+    text-align: center;
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    .responsive-box {
+        background: seagreen;
+        padding: 25px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .responsive-box {
+        background: tomato;
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile-First Approach:
+
+Definition: Mobile-first design means creating the initial layout for small screens 
+and then enhancing it for tablets and desktops. */
+
+* {
+    box-sizing: border-box;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    padding: 30px;
+    background: royalblue;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktops */
+@media (min-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* CSS Variables:
+
+Definition: CSS variables store reusable values, such as colors, spacing, and font sizes, 
+making styles easier to maintain. */
+
+:root {
+    --primary-color: royalblue;
+    --text-color: #222;
+    --card-spacing: 24px;
+    --card-radius: 12px;
+}
+
+.card {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: var(--card-spacing);
+    border-radius: var(--card-radius);
+    color: var(--text-color);
+    background: #f3f5ff;
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+/* :root: Defines variables globally.
+--primary-color: Declares a custom property.
+var(--primary-color): Uses the stored value. */
+
+/* UI Consistency:
+
+Definition: UI consistency means maintaining uniform colors, fonts, spacing, buttons, 
+and layouts throughout a website. */
+
+:root {
+    --brand-color: royalblue;
+    --spacing: 20px;
+    --radius: 10px;
+    --font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: #222;
+}
+
+header {
+    padding: var(--spacing);
+    background: var(--brand-color);
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+.card {
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    background: #f4f4f4;
+}
+
+button {
+    padding: 10px 16px;
+    background: var(--brand-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility-Friendly Styling:
+
+Definition: Accessibility-friendly styling makes websites easier to use for people with
+ different abilities, including those who use keyboards or assistive technologies. */
+
+ body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+button,
+a {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px 0;
+}
+
+button {
+    background: #174ea6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    color: #174ea6;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid #f0a000;
+    outline-offset: 3px;
+}
+
+button:hover {
+    background: #103b80;
+}
+
+
+/* CSS Code Organization:
+
+Definition: CSS code organization means arranging CSS rules in a clear, structured
+ order so the stylesheet is easy to read, understand, and maintain. */
+
+ /* 1. Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Header */
+.header {
+    background: royalblue;
+    color: white;
+    padding: 20px;
+}
+
+/* 3. Main Content */
+.content {
+    padding: 30px;
+}
+
+/* 4. Footer */
+.footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+}
+
+/* Reusable CSS Classes:
+
+Definition: Reusable CSS classes allow the same styles to be applied to multiple HTML 
+elements without repeating the CSS code. */
+
+.btn {
+    background: royalblue;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* CSS Naming Conventions:
+
+Definition: CSS naming conventions are rules for choosing clear and meaningful class
+ names that make stylesheets easier to understand and maintain. */
+
+ .product-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.product-title {
+    font-size: 22px;
+}
+
+.product-price {
+    color: green;
+}
+
+/* Removing Duplicate Styles:
+
+Definition: Removing duplicate styles means combining repeated CSS declarations into shared
+ rules to reduce code repetition and simplify maintenance. */
+
+ .title {
+    color: royalblue;
+    font-size: 24px;
+}
+
+.title {
+    color: royalblue;
+    font-size: 24px;
+}
+
+/* CSS Specificity Review:
+
+Definition: CSS specificity determines which CSS selector takes priority when multiple
+ rules target the same element and declare conflicting values. */
+
+ p {
+    color: green;
+}
+
+.text {
+    color: blue;
+}
+
+#message {
+    color: red;
+}
+
+/* Responsive Testing:
+
+Definition: Responsive testing checks whether a website displays and functions 
+correctly across different screen sizes, including mobile phones, tablets, and desktops. */
+
+.responsive-card {
+    padding: 30px;
+    margin: 20px;
+    background: lightblue;
+}
+
+@media (max-width: 600px) {
+    .responsive-card {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+/* Browser Developer Tools
+
+Definition: Browser Developer Tools are built-in browser utilities that help developers inspect HTML, debug CSS, test responsive layouts, and identify performance problems.
+
+How to open:
+
+Press F12 in Chrome or Edge.
+Right-click an element and select Inspect.
+
+Important panels:
+
+Elements: Inspect HTML and modify styles.
+Styles: View CSS rules and test changes.
+Console: Find JavaScript errors and warnings.
+Network: Inspect resource loading and requests.
+Performance: Analyze page performance.
+Device Toolbar: Test responsive layouts. */
+
+
+/* Accessibility Basics:
+
+Definition: Accessibility means designing websites so people with different 
+abilities can use them effectively. */
+
+input,
+button {
+    padding: 12px;
+    font-size: 16px;
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid royalblue;
+    outline-offset: 3px;
+}
+
+
+/* Cross-Browser Considerations:
+
+Definition: Cross-browser compatibility ensures that a website works consistently across 
+browsers such as Chrome, Firefox, Safari, and Edge. */
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Cross-Browser Considerations:
+
+Definition: Cross-browser compatibility ensures that a website works consistently across 
+browsers such as Chrome, Firefox, Safari, and Edge. */
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Performance and Optimization:
+
+Definition: CSS performance optimization means reducing unnecessary CSS and improving how 
+efficiently the browser processes and displays a website. */
+
+div {
+    color: black;
+}
+
+div p {
+    color: black;
+}
+
+div p span {
+    color: black;
+}
+
+
